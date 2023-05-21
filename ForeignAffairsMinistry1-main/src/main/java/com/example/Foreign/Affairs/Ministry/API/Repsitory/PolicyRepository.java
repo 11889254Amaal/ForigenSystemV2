@@ -18,7 +18,8 @@ public interface PolicyRepository extends JpaRepository<Policy,Integer> {
     @Query("UPDATE Policy c SET c.isActive=0  WHERE c.id = :id")
     void deletePolicy(@Param("id") Integer id);
 
-
+    @Query(value = "SELECT p FROM Policy p where p.id= :policyId")
+    Policy getPolicyById(@Param("policyId") Integer id);
     List<Policy> findByCountryName(String countryName);
 
 
@@ -26,6 +27,9 @@ public interface PolicyRepository extends JpaRepository<Policy,Integer> {
 
 
     List<Policy> findByTitleOfPolicy(String titleOfPolicy);
+
+    @Query(value = "SELECT p FROM Policy p")
+    List<Policy> getAllPolices();
 }
 
 

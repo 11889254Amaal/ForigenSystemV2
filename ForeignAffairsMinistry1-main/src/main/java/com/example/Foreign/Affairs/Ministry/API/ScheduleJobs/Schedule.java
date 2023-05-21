@@ -107,7 +107,7 @@ public class Schedule {
 
     }
 
-    @Scheduled(cron = "* * * * * *")
+    @Scheduled(cron = "0 0 0 * * *")
     public void UpdatePolicyFromExternalApi() {
         EmailDetails policy=new EmailDetails();
 

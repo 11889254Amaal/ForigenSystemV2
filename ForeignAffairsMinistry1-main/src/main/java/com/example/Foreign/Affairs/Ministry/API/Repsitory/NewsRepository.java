@@ -26,4 +26,10 @@ public interface NewsRepository  extends JpaRepository<News,Integer> {
 
 
     List<News> findByTopicOfNews(String topicOfNews);
+
+    @Query(value = "SELECT n FROM News n")
+    List<News> getAllNews();
+
+    @Query(value = "SELECT n FROM News n where n.id= :newsId")
+    News getNewsById(@Param("newsId") Integer id);
 }

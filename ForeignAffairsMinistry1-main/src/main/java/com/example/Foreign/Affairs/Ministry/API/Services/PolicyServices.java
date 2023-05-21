@@ -66,8 +66,30 @@ public class PolicyServices {
     }
     private final RestTemplate restTemplate = new RestTemplate();
     public Root getOneLinerNews() {
-        String url = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-18&sortBy=publishedAt&apiKey=5d18e651c46448d78e038ebeeab23d1a";
+        String url = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-20&sortBy=publishedAt&apiKey=5d18e651c46448d78e038ebeeab23d1a";
         Root response = restTemplate.getForObject(url, Root.class);
         return response;
+    }
+
+    public String getAllPoliciesAsString() {
+        List<Policy> policies = policyRepository.getAllPolices();
+
+        StringBuilder policiesStringBuilder = new StringBuilder();
+        for (Policy policy : policies) {
+            policiesStringBuilder.append("ID: ").append(policy.getId()).append("\n");
+            policiesStringBuilder.append("Country: ").append(policy.getCountryName()).append("\n");
+            policiesStringBuilder.append("Region: ").append(policy.getRegionName()).append("\n");
+            policiesStringBuilder.append("Topic: ").append(policy.getTitleOfPolicy()).append("\n");
+            policiesStringBuilder.append("Details: ").append(policy.getDetailsOfPolicy()).append("\n");
+            policiesStringBuilder.append("\n");
+        }
+
+        return policiesStringBuilder.toString();
+    }
+
+
+    public Policy getPolicyById(Integer id){
+        return policyRepository.getPolicyById(id);
+
     }
 }

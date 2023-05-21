@@ -78,5 +78,25 @@ public class NewsServices {
         return response;
     }
 
+    public String getAllNews() {
+        List<News> news = newsRepository.getAllNews();
+
+        StringBuilder newsStringBuilder = new StringBuilder();
+        for (News news1 : news) {
+            newsStringBuilder.append("ID: ").append(news1.getId()).append("\n");
+            newsStringBuilder.append("Country: ").append(news1.getCountryName()).append("\n");
+            newsStringBuilder.append("Region: ").append(news1.getRegionName()).append("\n");
+            newsStringBuilder.append("Title: ").append(news1.getTopicOfNews()).append("\n");
+            newsStringBuilder.append("Details: ").append(news1.getDetailsOfNews()).append("\n");
+            newsStringBuilder.append("\n");
+        }
+
+        return newsStringBuilder.toString();
+    }
+
+    public News getNewsById(Integer id){
+        return newsRepository.getNewsById(id);
+
+    }
 
 }
