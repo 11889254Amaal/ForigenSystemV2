@@ -1,5 +1,6 @@
 package com.example.Foreign.Affairs.Ministry.API.Modell;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 @Getter
 @Data
 @Entity
+@AllArgsConstructor
 public class ReportTable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,7 +1,9 @@
 package com.example.Foreign.Affairs.Ministry.API.Services;
 
 import com.example.Foreign.Affairs.Ministry.API.DTO.ReportDTO;
+import com.example.Foreign.Affairs.Ministry.API.Modell.News;
 import com.example.Foreign.Affairs.Ministry.API.Modell.ReportTable;
+import com.example.Foreign.Affairs.Ministry.API.Repsitory.NewsRepository;
 import com.example.Foreign.Affairs.Ministry.API.Repsitory.ReportRepository;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
@@ -10,6 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,10 +26,18 @@ public class ReportService {
 
     @Autowired
     ReportRepository reportRepository;
+
+    @Autowired
+    NewsRepository newsRepository;
     public String generateReportForTotalRequestAndError() throws FileNotFoundException, JRException {
         List<ReportTable> allUsageStatus = reportRepository.getAllUsageStatus();
         List<ReportDTO> usageReportDTOS = new ArrayList<>();
+
+
+        StringBuilder newsStringBuilder = new StringBuilder();
+
         for (ReportTable statusTable:allUsageStatus) {
+
             statusTable.getEndpoint();
             statusTable.getTotalRequests();
             statusTable.getTotalErrors();

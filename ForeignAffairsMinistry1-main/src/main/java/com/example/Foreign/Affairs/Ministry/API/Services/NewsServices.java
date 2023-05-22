@@ -19,7 +19,7 @@ public class NewsServices {
     @Autowired
     NewsRepository newsRepository;
 
-    public void CreateNewNews(CreatenNewsRequest newsRequest) throws ParseException {
+    public String CreateNewNews(CreatenNewsRequest newsRequest) throws ParseException {
         News NewsDetails = new News();
         NewsDetails.setCountryName(newsRequest.getCountryName());
         NewsDetails.setRegionName(newsRequest.getRegionName());
@@ -30,6 +30,7 @@ public class NewsServices {
         NewsDetails.setIsActive(newsRequest.getIsActive());
         newsRepository.save(NewsDetails);
 
+return "sucess";
     }
 
 
