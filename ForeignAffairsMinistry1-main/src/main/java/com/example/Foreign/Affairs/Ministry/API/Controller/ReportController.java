@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 public class ReportController {
 
     @Autowired
+    public
     ReportService reportService;
 
     @PreAuthorize("hasRole('ADMIN')")

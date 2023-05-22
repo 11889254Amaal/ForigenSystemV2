@@ -18,7 +18,7 @@ import java.util.Map;
 @Service
 public class ReportService {
 
-    public static final String pathToReports ="C:\\Users\\Amaal\\OneDrive\\Desktop\\Report\\Report.jrxml";
+    public static final String pathToReports ="C:\\Users\\Amaal\\OneDrive\\Desktop\\Report";
 
     @Autowired
     ReportRepository reportRepository;
