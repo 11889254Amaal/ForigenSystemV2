@@ -6,15 +6,14 @@ import com.example.Foreign.Affairs.Ministry.API.Modell.News;
 import com.example.Foreign.Affairs.Ministry.API.Modell.Policy;
 import com.example.Foreign.Affairs.Ministry.API.Repsitory.NewsRepository;
 import com.example.Foreign.Affairs.Ministry.API.Repsitory.PolicyRepository;
-import com.example.Foreign.Affairs.Ministry.API.Response.Article;
 
+import com.example.Foreign.Affairs.Ministry.API.Response.Article;
 import com.example.Foreign.Affairs.Ministry.API.Response.Root;
 import com.example.Foreign.Affairs.Ministry.API.Services.NewsServices;
 import com.example.Foreign.Affairs.Ministry.API.Services.PolicyServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -55,7 +54,7 @@ public class Schedule {
             String desc = artical.getDescription();
             NewsDetails.setTopicOfNews(title);
             NewsDetails.setDetailsOfNews(desc);
-            emailService.sendSimpleMail(news);
+
             newsRepository.save(NewsDetails);
         }
 
@@ -80,7 +79,6 @@ public class Schedule {
             NewsDetails.setTopicOfNews(title);
             NewsDetails.setDetailsOfNews(desc);
             newsRepository.save(NewsDetails);
-            emailService.sendSimpleMail(news);
         }
 
     }
@@ -102,7 +100,6 @@ public class Schedule {
             PolicyDetails.setTitleOfPolicy(title);
             PolicyDetails.setDetailsOfPolicy(desc);
             policyRepository.save(PolicyDetails);
-            emailService.sendSimpleMail(policy);
         }
 
     }

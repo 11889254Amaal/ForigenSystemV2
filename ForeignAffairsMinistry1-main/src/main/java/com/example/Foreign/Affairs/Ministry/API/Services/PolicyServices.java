@@ -1,6 +1,5 @@
 package com.example.Foreign.Affairs.Ministry.API.Services;
 
-import com.example.Foreign.Affairs.Ministry.API.Controller.PolicyManagementController;
 import com.example.Foreign.Affairs.Ministry.API.Modell.Policy;
 import com.example.Foreign.Affairs.Ministry.API.Repsitory.PolicyRepository;
 import com.example.Foreign.Affairs.Ministry.API.RequestObject.CreatePolicyRequest;
@@ -66,7 +65,7 @@ public class PolicyServices {
     }
     private final RestTemplate restTemplate = new RestTemplate();
     public Root getOneLinerNews() {
-        String url = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-20&sortBy=publishedAt&apiKey=5d18e651c46448d78e038ebeeab23d1a";
+        String url = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-22&sortBy=publishedAt&apiKey=bde4b4791fa24aa2a8a88acafae6147f";
         Root response = restTemplate.getForObject(url, Root.class);
         return response;
     }

@@ -1,12 +1,10 @@
 package com.example.Foreign.Affairs.Ministry.API.Services;
 
 import com.example.Foreign.Affairs.Ministry.API.Modell.News;
-import com.example.Foreign.Affairs.Ministry.API.Modell.Policy;
 import com.example.Foreign.Affairs.Ministry.API.Repsitory.NewsRepository;
-import com.example.Foreign.Affairs.Ministry.API.RequestObject.CreatePolicyRequest;
 import com.example.Foreign.Affairs.Ministry.API.RequestObject.CreatenNewsRequest;
 import com.example.Foreign.Affairs.Ministry.API.RequestObject.NewsRequestForUpdate;
-import com.example.Foreign.Affairs.Ministry.API.RequestObject.PolicyRequestForUpdate;
+
 import com.example.Foreign.Affairs.Ministry.API.Response.Root;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -73,7 +71,7 @@ public class NewsServices {
 
 
     public Root getOneLinerNews() {
-        String url = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-18&sortBy=publishedAt&apiKey=5d18e651c46448d78e038ebeeab23d1a";
+        String url = "https://newsapi.org/v2/everything?q=tesla&from=2023-04-22&sortBy=publishedAt&apiKey=bde4b4791fa24aa2a8a88acafae6147f";
         Root response = restTemplate.getForObject(url, Root.class);
         return response;
     }

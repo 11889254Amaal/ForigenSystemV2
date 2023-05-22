@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @Data
 public class Article {
+
     public String title ;
     public String description ;
 }
