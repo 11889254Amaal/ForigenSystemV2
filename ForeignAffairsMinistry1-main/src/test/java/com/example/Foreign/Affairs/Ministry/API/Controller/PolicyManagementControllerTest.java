@@ -47,13 +47,37 @@ class PolicyManagementControllerTest {
 
     @Test
     void searchPolicies() {
+        NewsServices newsServices = new NewsServices();
+        CreatenNewsRequest createnNewsRequest = new CreatenNewsRequest();
+        ReportTable reportTable = new ReportTable(1,"NewsManagement",6,2,3,4);
+        //newsServices.CreateNewNews(createnNewsRequest);
+        assertNotNull(reportTable);
+        String n = reportTable.getEndpoint();
+        assertEquals(n, "NewsManagement");
+        assertNotEquals(n,"NewsManagementss");
     }
 
     @Test
     void getAllPolicies() {
+        NewsServices newsServices = new NewsServices();
+        CreatenNewsRequest createnNewsRequest = new CreatenNewsRequest();
+        ReportTable reportTable = new ReportTable(1,"NewsManagement",6,2,3,4);
+        //newsServices.CreateNewNews(createnNewsRequest);
+        assertNotNull(reportTable);
+        String n = reportTable.getEndpoint();
+        assertEquals(n, "NewsManagement");
+        assertNotEquals(n,"NewsManagementss");
     }
 
     @Test
     void getPolicyById() {
+        NewsServices newsServices = new NewsServices();
+        CreatenNewsRequest createnNewsRequest = new CreatenNewsRequest();
+        ReportTable reportTable = new ReportTable(1,"NewsManagement",6,2,3,4);
+        //newsServices.CreateNewNews(createnNewsRequest);
+        assertNotNull(reportTable);
+        String n = reportTable.getEndpoint();
+        assertEquals(n, "NewsManagement");
+        assertNotEquals(n,"NewsManagementss");
     }
 }
